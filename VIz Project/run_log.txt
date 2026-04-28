@@ -6,46 +6,46 @@ Applied SMOTE to the training set to handle class imbalance.
 Train set size: 975 | Test set size: 203
 
 Training Decision Tree...
-Macro Recall: 0.8253
+Macro Recall: 0.8352
 Saved Decision Tree to models/Decision_Tree.pkl
 Confusion Matrix for Decision Tree:
-[[47  0  8]
- [ 1 60 20]
+[[50  0  5]
+ [ 0 58 23]
  [ 2  6 59]]
 
 
 Training Random Forest...
-Macro Recall: 0.8660
+Macro Recall: 0.8619
 Saved Random Forest to models/Random_Forest.pkl
 Confusion Matrix for Random Forest:
-[[51  0  4]
- [ 0 64 17]
+[[51  1  3]
+ [ 2 63 16]
  [ 1  7 59]]
 
 
 Training Gradient Boosting...
-Macro Recall: 0.7981
+Macro Recall: 0.8063
 Saved Gradient Boosting to models/Gradient_Boosting.pkl
 Confusion Matrix for Gradient Boosting:
 [[48  3  4]
- [ 0 64 17]
+ [ 0 66 15]
  [ 2 16 49]]
 
 
 Training XGBoost...
-Macro Recall: 0.8599
+Macro Recall: 0.8641
 Saved XGBoost to models/XGBoost.pkl
 Confusion Matrix for XGBoost:
 [[50  0  5]
- [ 2 64 15]
+ [ 2 65 14]
  [ 2  6 59]]
 
 
 Training Voting Ensemble...
-Macro Recall: 0.8437
+Macro Recall: 0.8558
 Saved Voting Ensemble to models/Voting_Ensemble.pkl
 Confusion Matrix for Voting Ensemble:
-[[48  0  7]
+[[50  0  5]
  [ 0 63 18]
  [ 2  6 59]]
 
@@ -54,8 +54,8 @@ Confusion Matrix for Voting Ensemble:
 FINAL EVALUATION RESULTS
 ==================================================
                    Macro Recall
-Random Forest          0.865998
-XGBoost                0.859937
-Voting Ensemble        0.843701
-Decision Tree          0.825294
-Gradient Boosting      0.798065
+XGBoost                0.864052
+Random Forest          0.861883
+Voting Ensemble        0.855822
+Decision Tree          0.835246
+Gradient Boosting      0.806295

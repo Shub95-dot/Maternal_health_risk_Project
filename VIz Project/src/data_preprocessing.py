@@ -20,14 +20,13 @@ def load_and_engineer_features(filepath):
     df["ShockIndex"] = df["HeartRate"] / df["SystolicBP"]
     df["BPRatio"] = df["SystolicBP"] / df["DiastolicBP"]
     
-    df["TempDeviation"] = df["BodyTemp"] - 98.2
-    df["BSDeviation"] = df["BS"] - 7
-    
+    # Clinical Heuristics (Using thresholds to create a composite risk score)
+    temp_dev = df["BodyTemp"] - 98.2
     df["CombinedRiskScore"] = (
         (df["MAP"] > 105).astype(int) +
         (df["BS"] > 10).astype(int) +
         (df["HeartRate"] > 90).astype(int) +
-        (df["TempDeviation"] > 1).astype(int)
+        (temp_dev > 1).astype(int)
     )
     
     return df
