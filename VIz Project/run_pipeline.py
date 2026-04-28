@@ -1,7 +1,7 @@
 import sys
 import os
 import pandas as pd
-from sklearn.metrics import recall_score, classification_report
+from sklearn.metrics import recall_score, classification_report, confusion_matrix
 import joblib
 
 # Add src to the Python path
@@ -39,6 +39,7 @@ def main():
     # Train and evaluate
     results = {}
     os.makedirs("models", exist_ok=True)
+    os.makedirs("visualizations", exist_ok=True)
     
     for name, model in models.items():
         p(f"\nTraining {name}...")
@@ -54,6 +55,10 @@ def main():
         model_filename = f"models/{name.replace(' ', '_')}.pkl"
         joblib.dump(model, model_filename)
         p(f"Saved {name} to {model_filename}")
+        
+        # Confusion Matrix
+        cm = confusion_matrix(y_test, preds)
+        p(f"Confusion Matrix for {name}:\n{cm}\n")
 
     # Comparison Table
     p("\n" + "=" * 50)
