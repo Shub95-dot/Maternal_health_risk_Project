@@ -30,29 +30,28 @@ def main():
     
     p("Applied SMOTE to the training set to handle class imbalance.")
     
-    p(f"Train set size: {X_train.shape[0]} | Test set size: {X_test.shape[0]}")
+    # Initialize models
+    models = get_models(num_classes=len(le.classes_))
     
-    # Get models
-    num_classes = len(le.classes_)
-    models = get_models(num_classes)
-    
-    # Train and evaluate
     results = {}
-    os.makedirs("models", exist_ok=True)
-    os.makedirs("visualizations", exist_ok=True)
     
+    # Training and evaluation
     for name, model in models.items():
-        p(f"\nTraining {name}...")
+        p("-" * 30)
+        p(f"Training {name}...")
         model.fit(X_train, y_train)
         
+        # Predictions
         preds = model.predict(X_test)
+        
+        # Metrics
         macro_recall = recall_score(y_test, preds, average="macro")
         results[name] = macro_recall
         
         p(f"Macro Recall: {macro_recall:.4f}")
         
         # Save model
-        model_filename = f"models/{name.replace(' ', '_')}.pkl"
+        model_filename = os.path.join("models", f"{name.replace(' ', '_')}.pkl")
         joblib.dump(model, model_filename)
         p(f"Saved {name} to {model_filename}")
         

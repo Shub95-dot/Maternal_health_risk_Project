@@ -3,47 +3,46 @@ Maternal Health Risk - Master Pipeline
 ==================================================
 Loading REAL data from: data\Maternal Health Risk Data Set.csv
 Applied SMOTE to the training set to handle class imbalance.
-Train set size: 975 | Test set size: 203
-
+------------------------------
 Training Decision Tree...
 Macro Recall: 0.8352
-Saved Decision Tree to models/Decision_Tree.pkl
+Saved Decision Tree to models\Decision_Tree.pkl
 Confusion Matrix for Decision Tree:
 [[50  0  5]
  [ 0 58 23]
  [ 2  6 59]]
 
-
+------------------------------
 Training Random Forest...
 Macro Recall: 0.8619
-Saved Random Forest to models/Random_Forest.pkl
+Saved Random Forest to models\Random_Forest.pkl
 Confusion Matrix for Random Forest:
 [[51  1  3]
  [ 2 63 16]
  [ 1  7 59]]
 
-
+------------------------------
 Training Gradient Boosting...
 Macro Recall: 0.8063
-Saved Gradient Boosting to models/Gradient_Boosting.pkl
+Saved Gradient Boosting to models\Gradient_Boosting.pkl
 Confusion Matrix for Gradient Boosting:
 [[48  3  4]
  [ 0 66 15]
  [ 2 16 49]]
 
-
+------------------------------
 Training XGBoost...
 Macro Recall: 0.8641
-Saved XGBoost to models/XGBoost.pkl
+Saved XGBoost to models\XGBoost.pkl
 Confusion Matrix for XGBoost:
 [[50  0  5]
  [ 2 65 14]
  [ 2  6 59]]
 
-
+------------------------------
 Training Voting Ensemble...
 Macro Recall: 0.8558
-Saved Voting Ensemble to models/Voting_Ensemble.pkl
+Saved Voting Ensemble to models\Voting_Ensemble.pkl
 Confusion Matrix for Voting Ensemble:
 [[50  0  5]
  [ 0 63 18]
