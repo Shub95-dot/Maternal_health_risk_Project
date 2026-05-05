@@ -1,0 +1,15 @@
+Model,Dataset,Macro_Recall
+Random Forest,Main,0.881
+Voting Ensemble,Main,0.876
+Stacking Ensemble,Main,0.864
+XGBoost,Main,0.864
+Decision Tree,Main,0.849
+Gradient Boosting,Main,0.771
+Logistic Regression,Main,0.620
+Random Forest,Main+FE,0.871
+Voting Ensemble,Main+FE,0.859
+XGBoost,Main+FE,0.849
+Decision Tree,Main+FE,0.835
+Stacking Ensemble,Main+FE,0.832
+Gradient Boosting,Main+FE,0.823
+Logistic Regression,Main+FE,0.675
